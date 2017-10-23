@@ -1,22 +1,3 @@
-//IP == ip1.ip2.ip3.ip4
-class IP{
-	constructor(iP){
-		this._ip=iP;
-	}
-	get ip(){
-		return this._ip;
-	}
-	set ip(ip){
-		this._ip = ip;
-	}
-	get val(){
-		return this._val;
-	}
-	set val(val){
-		this._val = val;
-	}
-}
-
 function countZeros(currentIP){
 	var zeroBitsCounter = 0;
 	var tempIP = currentIP[3];
@@ -77,18 +58,14 @@ function incrementIP(currentIP){
 
 //val is number of ip u wanna generate
 function genIP(currentIP, value){
-	if (val <= 0) {
-		return;
-	}
-
 	var zeroBitsCount = countZeros(currentIP);
 
 	var maxValue = Math.pow(2, zeroBitsCount);
 
 	if (value < maxValue) {
 
-		var neededBits = Math.floor(Math.log2(val));
-		var maxCIDR_IPValue = Math.pow(2, ipVal);
+		var neededBits = Math.floor(Math.log2(value));
+		var maxCIDR_IPValue = Math.pow(2, neededBits);
 
 		console.log(currentIP[0] + '.' + currentIP[1] + '.' + currentIP[2] + '.' + currentIP[3] + '/' + (32 - maxCIDR_IPValue));
 		
